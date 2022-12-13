@@ -23,6 +23,7 @@ import {
   MenuItem,
   Image,
   Divider,
+  color,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -34,6 +35,11 @@ import {
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
+  const linkColor = useColorModeValue("gray.600", "color.white");
+  const linkHoverColor = useColorModeValue("gray.800", "color.lightblue");
+  const linkBgColor = useColorModeValue("white", "color.light");
+  const linkBgColorHover = useColorModeValue("white", "color.dark");
+
   return (
     <Box>
       <Flex
@@ -41,7 +47,7 @@ export default function Navbar() {
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 6 }}
         align={"center"}
       >
         <Flex
@@ -103,7 +109,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"white"}
             bg={"color.lighter"}
-            href={"#"}
+            //href={"https://google.com"}
             _hover={{
               bg: "color.light",
             }}
@@ -125,9 +131,10 @@ export default function Navbar() {
               <Box
                 p={1}
                 borderWidth={2}
-                borderColor={"primary.lighter"}
+                borderColor={"color.lighter"}
                 borderStyle={"dashed"}
                 borderRadius={15}
+                bg={"color.light"}
               >
                 <Avatar
                   size={"sm"}
@@ -137,7 +144,7 @@ export default function Navbar() {
                 />
               </Box>
             </MenuButton>
-            <MenuList alignItems={"center"}>
+            <MenuList alignItems={"center"} bg={"color.light"} border={"none"}>
               <br />
               <Center>
                 <Avatar
@@ -152,10 +159,37 @@ export default function Navbar() {
                 <p>Johanna</p>
               </Center>
               <br />
-              <MenuDivider />
-              <MenuItem>Your Servers</MenuItem>
-              <MenuItem>Account Settings</MenuItem>
-              <MenuItem>Logout</MenuItem>
+              <MenuDivider color={"color.lighter"} />
+              <MenuItem
+                bg={linkBgColor}
+                _hover={{
+                  textDecoration: "none",
+                  bg: linkBgColorHover,
+                  color: linkHoverColor,
+                }}
+              >
+                Your Servers
+              </MenuItem>
+              <MenuItem
+                bg={linkBgColor}
+                _hover={{
+                  textDecoration: "none",
+                  bg: linkBgColorHover,
+                  color: linkHoverColor,
+                }}
+              >
+                Account Settings
+              </MenuItem>
+              <MenuItem
+                bg={linkBgColor}
+                _hover={{
+                  textDecoration: "none",
+                  bg: linkBgColorHover,
+                  color: linkHoverColor,
+                }}
+              >
+                Logout
+              </MenuItem>
             </MenuList>
           </Menu>
         </Stack>
@@ -174,7 +208,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "color.light");
 
   return (
-    <Stack direction={"row"} spacing={4} >
+    <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -227,7 +261,6 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       p={2}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "color.dark") }}
-      
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
