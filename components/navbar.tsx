@@ -21,6 +21,8 @@ import {
   Center,
   MenuDivider,
   MenuItem,
+  Image,
+  Divider,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -35,7 +37,7 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("color.dark", "color.dark")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -59,7 +61,12 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          alignItems={"center"}
+        >
+          {/** 
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
@@ -67,6 +74,11 @@ export default function Navbar() {
           >
             Logo
           </Text>
+        */}
+
+          <Center>
+            <Image src="logo.svg" alt="Logo" h={9} />
+          </Center>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -93,16 +105,19 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"color.lighter"}
             href={"#"}
             _hover={{
-              bg: "pink.300",
+              bg: "color.light",
             }}
           >
-            Sign Up
+            Connect
           </Button>
 
           <Menu>
+            <Center height="40px" px={1} alignItems={"center"}>
+              <Divider orientation="vertical" />
+            </Center>
             <MenuButton
               as={Button}
               rounded={"full"}
@@ -112,7 +127,12 @@ export default function Navbar() {
             >
               <Avatar
                 size={"sm"}
-                src={"https://avatars.dicebear.com/api/male/username.svg"}
+                src={
+                  "https://avatars.dicebear.com/api/micah/your-custom-seed.svg"
+                }
+                borderWidth={2}
+                borderColor={"primary.lighter"}
+                borderStyle={"dashed"}
               />
             </MenuButton>
             <MenuList alignItems={"center"}>
@@ -120,7 +140,9 @@ export default function Navbar() {
               <Center>
                 <Avatar
                   size={"2xl"}
-                  src={"https://avatars.dicebear.com/api/male/username.svg"}
+                  src={
+                    "https://avatars.dicebear.com/api/micah/your-custom-seed.svg"
+                  }
                 />
               </Center>
               <br />
@@ -306,7 +328,7 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
+    label: "Popular",
     children: [
       {
         label: "Explore Design Work",
@@ -322,7 +344,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
 
   {
-    label: "Learn Design",
+    label: "Categories",
     href: "#",
   },
 ];
