@@ -12,6 +12,7 @@ const colors = {
     light: "#261A5B",
     lighter: "#4A4072",
     white: "#FFFFFF",
+    lightblue: "#27A5F3",
   },
 };
 

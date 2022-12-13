@@ -42,9 +42,6 @@ export default function Navbar() {
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Flex
@@ -66,18 +63,17 @@ export default function Navbar() {
           justify={{ base: "center", md: "start" }}
           alignItems={"center"}
         >
-          {/** 
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
-        */}
-
           <Center>
             <Image src="logo.svg" alt="Logo" h={9} />
+
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={"color.lightblue"}
+              ml={3}
+            >
+              X-Protocol
+            </Text>
           </Center>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -90,6 +86,7 @@ export default function Navbar() {
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
+          alignItems={"center"}
         >
           <Button
             as={"a"}
@@ -125,15 +122,20 @@ export default function Navbar() {
               cursor={"pointer"}
               minW={0}
             >
-              <Avatar
-                size={"sm"}
-                src={
-                  "https://avatars.dicebear.com/api/micah/your-custom-seed.svg"
-                }
+              <Box
+                p={1}
                 borderWidth={2}
                 borderColor={"primary.lighter"}
                 borderStyle={"dashed"}
-              />
+                borderRadius={15}
+              >
+                <Avatar
+                  size={"sm"}
+                  src={
+                    "https://avatars.dicebear.com/api/micah/your-custom-seed.svg"
+                  }
+                />
+              </Box>
             </MenuButton>
             <MenuList alignItems={"center"}>
               <br />
@@ -147,7 +149,7 @@ export default function Navbar() {
               </Center>
               <br />
               <Center>
-                <p>Username</p>
+                <p>Johanna</p>
               </Center>
               <br />
               <MenuDivider />
@@ -167,12 +169,12 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = useColorModeValue("gray.600", "color.white");
+  const linkHoverColor = useColorModeValue("gray.800", "color.lightblue");
+  const popoverContentBgColor = useColorModeValue("white", "color.light");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -187,6 +189,7 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
+                textTransform={"uppercase"}
               >
                 {navItem.label}
               </Link>
@@ -223,18 +226,19 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      _hover={{ bg: useColorModeValue("pink.50", "color.dark") }}
+      
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "color.lightblue" }}
             fontWeight={500}
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <Text fontSize={12}>{subLabel}</Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -245,7 +249,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"color.lightblue"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
