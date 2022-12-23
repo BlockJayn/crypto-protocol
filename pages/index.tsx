@@ -3,7 +3,6 @@ import Image from "next/image";
 import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
 import React, { ReactNode } from "react";
-import { WalletSection } from "../components";
 
 export default function Home() {
   return (
@@ -16,8 +15,6 @@ export default function Home() {
           <meta name="description" content="A Crypto Protocol" />
           <link rel="icon" href="/logo.svg" />
         </Head>
-
-        <WalletSection />
 
         <main className={styles.main}>
           <h1 className={styles.title}>Welcome to X-Protocol</h1>

@@ -118,8 +118,6 @@ export default function Navbar() {
             Connect
           </Button>
 
-          {/* <WalletSection /> */}
-
           <Menu>
             <Center height="40px" px={1} alignItems={"center"}>
               <Divider orientation="vertical" />
@@ -148,7 +146,7 @@ export default function Navbar() {
               </Box>
             </MenuButton>
             <MenuList alignItems={"center"} bg={"color.light"} border={"none"}>
-              <br />
+              {/* <br />
               <Center>
                 <Avatar
                   size={"2xl"}
@@ -160,7 +158,10 @@ export default function Navbar() {
               <br />
               <Center>
                 <p>Johanna</p>
-              </Center>
+              </Center> */}
+
+              <WalletSection />
+
               <br />
               <MenuDivider color={"color.lighter"} />
               <MenuItem

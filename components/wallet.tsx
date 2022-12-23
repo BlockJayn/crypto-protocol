@@ -131,7 +131,7 @@ export const WalletSection = () => {
   );
 
   return (
-    <Center py={16}>
+    <Center py={4} px={4}>
       <Grid
         w="full"
         maxW="sm"
@@ -142,7 +142,7 @@ export const WalletSection = () => {
       >
         <GridItem>{chooseChain}</GridItem>
         {connectWalletWarn && <GridItem>{connectWalletWarn}</GridItem>}
-        <GridItem px={6}>
+        <GridItem px={0}>
           <Stack
             justifyContent="center"
             alignItems="center"
