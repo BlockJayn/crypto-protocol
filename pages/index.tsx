@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/navbar";
-import Sidebar from "../components/sidebar";
 import styles from "../styles/Home.module.css";
 import React, { ReactNode } from "react";
 import { WalletSection } from "../components";
@@ -31,8 +30,6 @@ export default function Home() {
               <p>Find in-depth information about Next.js features and API.</p>
             </a>
 
-
-
             <a
               href="https://github.com/vercel/next.js/tree/canary/examples"
               className={styles.card}
@@ -40,8 +37,6 @@ export default function Home() {
               <h2>Examples &rarr;</h2>
               <p>Discover and deploy boilerplate example Next.js projects.</p>
             </a>
-
-
           </div>
         </main>
 

@@ -31,7 +31,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { WalletSection } from "./wallet";
+import { WalletSection } from "../components";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -117,6 +117,8 @@ export default function Navbar() {
           >
             Connect
           </Button>
+
+          {/* <WalletSection /> */}
 
           <Menu>
             <Center height="40px" px={1} alignItems={"center"}>
