@@ -31,6 +31,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { WalletSection } from "./wallet";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();

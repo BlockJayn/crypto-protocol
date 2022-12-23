@@ -23,6 +23,25 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "@chain-registry/types": "0.14.0",
+    "@cosmjs/cosmwasm-stargate": "0.29.5",
+    "@cosmjs/stargate": "0.29.5",
+    "@cosmos-kit/core": "0.27.13",
+    "@cosmos-kit/cosmostation": "0.14.14",
+    "@cosmos-kit/keplr": "0.32.14",
+    "@cosmos-kit/leap": "0.13.14",
+    "@cosmos-kit/react": "0.27.8",
+    "chain-registry": "1.6.0",
+    "chakra-react-select": "4.4.0",
+    "fast-fuzzy": "1.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "typescript": "4.9.3"
   }
 }
