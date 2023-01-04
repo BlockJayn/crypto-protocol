@@ -3,11 +3,14 @@ import Image from "next/image";
 import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
 import React, { ReactNode } from "react";
+import { Login } from "../components/login";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+
+      <Login />
 
       <div className={styles.container}>
         <Head>
